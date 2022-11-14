@@ -1,5 +1,5 @@
 #include "observateur.h"
-
+/*hello*/
 int ajouter(char * filename, observateur  o )
 {
     FILE * f=fopen(filename, "a");
