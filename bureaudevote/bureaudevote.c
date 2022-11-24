@@ -263,6 +263,25 @@ void triBureauDeVoteParNbObservateur(char *nom_fichier){
 	
 	
 }
+void taux (char *nomficher,float *tn,float *te)
+{
+observateur o;
+    int totale=0,n=0,e=0;
+    FILE * f=fopen(nomficher, "r");
+    if(f!=NULL)
+    {
+        while(fscanf(f,"%s %s %d %d %d %d %d %s %s\n",o.Nom,o.Prenom,&o.d.jour,&o.d.mois,&o.d.annee,&o.cin,&o.id,o.nationalite,o.professione)!=EOF)
+        {totale++;
+            if(strcmp(o.nationalite,"tunisienne")==0)
+                n++;
+else
+           e++;
+        }
+*tn=(float )n/totale;
+*te=(float) e/totale;
+fclose(f);
+    }
+}
 
 
 

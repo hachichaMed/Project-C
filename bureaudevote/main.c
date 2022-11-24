@@ -3,6 +3,7 @@
 #include "bureaudevote.h"
 int main(){
 	int choix,id_modifer,id_supprimer;
+float tn ,te ;
 	BureauDeVote bureauDeVote,bureauDeVoteModifier;
 	do{
 		do{
@@ -12,10 +13,11 @@ int main(){
 			printf("3)-Supprimer Bureau de vote\n");
 			printf("4)-Afficher les bureaux de vote\n");
 			printf("5)-Donner nombre des observateur + trier bureau de vote par nbObservateur\n");
+                        printf("6)-taux\n");
 			printf("0)-Quitter\n");
 			printf("Donner votre choix:");
 			scanf("%d",&choix);
-		}while(choix<0 || choix>5);
+		}while(choix<0 || choix>6);
 		switch(choix){
 			case 1:
 				printf("Donner identifiant:");
@@ -77,6 +79,11 @@ int main(){
 				afficherBureauDeVote("bureaudevotetriee.txt");
 				printf("\n le nombre totale des observateurs est:%d\n",nbTotalObservateur("bureaudevote.txt"));
 				break;
+			case 6:
+				taux("observateur.txt",&tn,&te);
+				printf("taux nationalite tunisienne=%f ,nationalite etranger=%f",tn,te);
+				break;
+
 		}
 	}while(choix!=0);
 	return 0;
